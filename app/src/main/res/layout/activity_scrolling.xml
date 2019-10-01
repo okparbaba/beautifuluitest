@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".ScrollingActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:toolbarId="@+id/toolbar">
+            <ImageView
+                android:layout_width="match_parent"
+                android:src="@drawable/toolbar"
+                android:tint="#6F686666"
+                android:scaleType="fitXY"
+                android:layout_height="wrap_content"/>
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/AppTheme.PopupOverlay" >
+                <RelativeLayout android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView android:layout_width="wrap_content"
+                        android:id="@+id/imgToolbar"
+                        android:tint="@android:color/white"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/menu"
+                        android:layout_height="wrap_content"/>
+                    <ImageView
+                        android:id="@+id/imgLogo"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="wrap_content"
+                        android:clickable="true"
+                        android:foreground="?selectableItemBackground"
+                        android:layout_marginRight="20dp"
+                        android:layout_alignParentEnd="true"
+                        android:src="@drawable/attractivewoman"
+                        android:layout_height="wrap_content"/>
+
+                </RelativeLayout>
+            </androidx.appcompat.widget.Toolbar>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_marginTop="80dp"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:layout_marginLeft="20dp"
+                android:text="Find Your Best Destinations"
+                android:layout_height="wrap_content"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+
+                android:layout_marginTop="200dp"
+                android:background="@drawable/search_back"
+                android:orientation="horizontal"
+                android:paddingLeft="20dp"
+                android:paddingVertical="12dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:src="@drawable/search_24px"
+                    android:layout_height="wrap_content"/>
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:ems="13"
+                    android:hint="Find a Place"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@android:color/darker_gray"
+                    android:textSize="15sp"
+                    android:background="@android:color/white"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <include layout="@layout/content_scrolling" />
+
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <FrameLayout
+        android:id="@+id/frag_container"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        app:itemHorizontalTranslationEnabled="false"
+        app:labelVisibilityMode="unlabeled"
+        app:itemIconTint="@android:color/white"
+        app:menu="@menu/bottom_navigation"
+        android:background="#FF6E6E"
+        android:layout_height="wrap_content" />
+</RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

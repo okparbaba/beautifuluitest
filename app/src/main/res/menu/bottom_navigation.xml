@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:icon="@drawable/navhome"
+        android:title="Item" />
+    <item
+        android:icon="@drawable/navnoti"
+        android:title="Item" />
+    <item
+        android:icon="@drawable/snavplu"
+        android:title="Item" />
+    <item
+        android:icon="@drawable/fav"
+        android:title="Item" />
+    <item
+        android:icon="@drawable/user"
+        android:title="Item" />
+</menu>

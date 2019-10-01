@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    android:clickable="true"
+    android:background="#fff"
+    android:fitsSystemWindows="true"
+    android:focusable="true">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:clickable="true"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:focusable="true">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlwaysCollapsed"
+            app:toolbarId="@+id/toolbar"
+            android:focusable="true">
+            <ImageView
+                android:layout_width="match_parent"
+                android:src="@drawable/jheencastio"
+                android:tint="#6F686666"
+                android:scaleType="fitXY"
+                android:layout_height="wrap_content"/>
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/AppTheme.PopupOverlay" >
+                <RelativeLayout android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView android:layout_width="wrap_content"
+                        android:id="@+id/imgToolbar"
+                        android:tint="@android:color/white"
+                        android:layout_centerVertical="true"
+                        android:clickable="true"
+                        android:foreground="?selectableItemBackground"
+                        android:src="@drawable/back"
+                        android:layout_height="wrap_content"/>
+
+
+                </RelativeLayout>
+            </androidx.appcompat.widget.Toolbar>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="10dp"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:text="Italy"
+                    android:textSize="30sp"
+                    android:id="@+id/tvCity"
+                    android:layout_marginLeft="10dp"
+                    android:textStyle="bold"
+                    android:layout_above="@+id/ratingBar"
+                    android:layout_height="wrap_content"/>
+
+                <RatingBar
+                    android:id="@+id/ratingBar"
+                    android:layout_width="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:scaleY=".5"
+                    android:scaleX=".5"
+                    android:transformPivotX="0dp"
+                    android:numStars="5"
+                    android:layout_margin="10dp"
+                    android:rating="4.5"
+                    android:transformPivotY="0dp"
+                    app:theme="@style/RatingBar"
+                    android:layout_height="wrap_content" />
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="70dp"
+                    android:src="@drawable/fav"
+                    android:layout_alignParentBottom="true"
+                    android:layout_height="40dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="45dp"
+                    android:text="62"
+                    android:textColor="@android:color/white"
+                    android:layout_marginLeft="65dp"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_toEndOf="@+id/tvCity"
+                    android:layout_height="wrap_content"/>
+
+            </RelativeLayout>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+<include layout="@layout/city_scrolling"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
